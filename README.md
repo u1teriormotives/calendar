@@ -1,5 +1,6 @@
 THE CÁLƐNÐR
 -
+(/kælɛnðɚ/)
 
 absolutely the best calendar software ever
 
