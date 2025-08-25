@@ -1,0 +1,138 @@
+:root {
+  --body-background-color: #fff;
+  --text-color: #000;
+  --day-border: #000 solid 1px;
+  --box-gap: 5px;
+  --day-text-size: 0.7rem;
+  --week-size: 7;
+  --week-column-size: 10vw;
+  --day-color: #c1c6cd;
+  --month-name-size: 3.5rem;
+  --year-statement-size: 4rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --body-background-color: #0e1016;
+    --text-color: #fff;
+    --day-border: #fff solid 1px;
+    --day-color: #c1c6cd;
+  }
+}
+@media (max-width: 400px) {
+  :root {
+    --week-column-size: 40px;
+  }
+}
+
+* {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: var(--text-color);
+}
+
+body {
+  align-content: center;
+  align-items: center;
+  background-color: var(--body-background-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  margin: 0;
+  overflow-x: hidden;
+  padding: 0;
+  width: 100vw;
+}
+body > header {
+  width: 80vw;
+}
+#totalDays {
+  font-size: 0.7rem;
+}
+
+main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: min-content;
+}
+
+main > section.days {
+  display: grid;
+  gap: var(--box-gap);
+  grid-auto-rows: var(--week-column-size);
+  grid-template-columns: repeat(var(--week-size), var(--week-column-size));
+  margin-bottom: 1.7rem;
+  width: 100%;
+}
+main > section.header {
+  display: grid;
+  gap: var(--box-gap);
+  grid-auto-rows: 1.7rem;
+  grid-template-columns: repeat(var(--week-size), var(--week-column-size));
+  margin-bottom: 1.7rem;
+  width: 100%;
+}
+main > section.header > p.dayName {
+  font-size: 1.23rem;
+  font-weight: bold;
+}
+
+p.day {
+  color: var(--day-color);
+  margin: 0;
+  padding: 4px;
+}
+
+header.month {
+  font-family: "Fleur De Leah", cursive;
+  font-size: var(--month-name-size);
+  padding: 5px;
+  width: 100%;
+}
+
+section.days > div {
+  overflow: auto;
+}
+
+div.schuledeigh {
+  background-color: #200101;
+  border: var(--day-border);
+}
+div.schuledeigh > p.day {
+  color: #fff;
+}
+div.neinschule {
+  background-color: #4ba371;
+  border: var(--day-border);
+}
+div.today {
+  background-color: #a2964a;
+  border: var(--day-border);
+}
+div.today > p.day {
+  color: #fff;
+}
+
+p.yearstatement {
+  font-family: "Monsieur La Doulaise", cursive;
+  font-size: var(--year-statement-size);
+  text-align: center;
+}
+#year {
+  font-family: "Monsieur La Doulaise", cursive;
+  font-size: var(--year-statement-size);
+  margin-left: 8px;
+  margin-right: 12px;
+}
+.OURLORD {
+  font-family: "Fleur De Leah", cursive;
+  font-size: var(--year-statement-size);
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+}
